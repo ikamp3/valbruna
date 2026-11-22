@@ -1,11 +1,11 @@
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vallbruna</title>
-<meta content="cover" name="claude:viewport-fit-sides"/>
-<meta content="Vallbruna verifies the document, the company and the counterparty before money moves, and seals translated evidence when cross-border fraud has already happened." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Before you pay, click or reply, ask Vallbruna whether it's a scam. Calls, messages, emails, offers, contracts and investors, checked in seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: cinematic alpine hero → light product sections → dark "night valley" bands for the engine and Mode B → pricing → founder → night CTA. Content width 1180px. */
 :root {
@@ -356,379 +356,440 @@ footer .brand { color: var(--night-fg); margin-bottom: 14px; }
 .lang button[aria-pressed="true"] { background: rgba(255,255,255,.14); color: var(--night-fg); }
 @media (max-width: 1380px) { .nav .wrap > .btn-ghost { display: none; } }
 @media (max-width: 400px) { .brand .wm { display: none; } }
+
+/* ===== v2: consumer-first additions ===== */
+.leftcol { min-width: 0; }
+.shared { margin: 16px 18px 4px; padding: 14px 16px; border-radius: 12px; background: rgba(255,255,255,.05); border: 1px solid var(--night-line); font-size: 15px; line-height: 1.55; color: var(--night-fg); quotes: "“" "”"; }
+.shared::before { content: open-quote; } .shared::after { content: close-quote; }
+.checks li { grid-template-columns: 22px 1fr; }
+.verdict .act { font-size: 15px; }
+.strip ul.fmts { font-family: var(--f-display); font-size: 14px; letter-spacing: 0; gap: 8px; }
+.strip ul.fmts li { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; background: var(--bg); }
+.shift { border-top: 1px solid var(--line); }
+.srow { display: grid; grid-template-columns: 1fr 48px 1.35fr; gap: 16px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.srow .sl { display: block; font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.srow .then .t { color: var(--muted); font-size: 18px; text-decoration: line-through; text-decoration-thickness: 1px; }
+.srow .now .t { font-size: clamp(19px, 2.1vw, 25px); font-weight: 500; letter-spacing: -0.01em; line-height: 1.25; }
+.srow .now .sl { color: var(--accent); }
+.srow .arr { color: var(--accent); font-size: 22px; text-align: center; }
+@media (max-width: 680px) { .srow { grid-template-columns: 1fr; gap: 10px; } .srow .arr { display: none; } }
+.shift-end { margin-top: clamp(32px, 4vw, 48px); font-family: var(--f-serif); font-size: clamp(28px, 3.4vw, 42px); line-height: 1.18; max-width: 26ch; text-wrap: balance; }
+.shift-end strong { font-weight: 400; font-style: italic; color: var(--accent); }
+.howsteps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.howsteps li { border: 1px solid var(--line); border-radius: 18px; background: var(--surface); padding: 28px 26px 30px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.howsteps .hn { font-family: var(--f-mono); font-size: 12px; color: var(--accent); }
+.howsteps h3 { font-size: 24px; }
+.howsteps p { color: var(--muted); font-size: 15.5px; }
+@media (max-width: 860px) { .howsteps { grid-template-columns: 1fr; } }
+.ph-savers { background-image: url("img/investor-couple.jpg"), url("img/founder-night.jpg"), linear-gradient(160deg, #4a3f5c, #1d1a2a 70%); }
+.nums.n3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .nums.n3 { grid-template-columns: 1fr; } .nums.n3 .num, .nums.n3 .num + .num { padding-left: 0; border-left: 0; } .nums.n3 .num + .num { border-top: 1px solid var(--line); } }
+.pnote { margin-top: 18px; font-size: 14px; color: var(--muted); }
+.ctameta { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.6); }
 </style>
+
+
 <!-- NAV -->
 <header class="nav band" id="top">
-<div class="wrap">
-<a aria-label="Vallbruna home" class="brand" data-i18n-aria="s234" href="#top">
-<svg aria-hidden="true" fill="none" viewbox="0 0 32 32"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"></circle><path d="M5 22 L12.5 11.5 L16.5 17 L20 12.5 L27 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path><path d="M12.5 26 L16 22.5 L19.5 26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Vallbruna home" data-i18n-aria="aria.home">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"/><path d="M5 22 L12.5 11.5 L16.5 17 L20 12.5 L27 22" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M12.5 26 L16 22.5 L19.5 26" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span class="wm">Vallbruna</span>
     </a>
-<ul id="navlinks">
-<li><a data-i18n="s1" href="#platform">Platform</a></li>
-<li><a data-i18n="s2" href="#people">Who we protect</a></li>
-<li><a data-i18n="s3" href="#banks">For banks</a></li>
-<li><a data-i18n="s4" href="#recovery">Recovery</a></li>
-<li><a data-i18n="s5" href="#pricing">Pricing</a></li>
-<li><a data-i18n="s6" href="#company">Company</a></li>
-<li class="menu-only"><a data-i18n="s7" href="#start">Run a free check</a></li>
-</ul>
-<span class="spacer"></span>
-<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="de" aria-pressed="false">DE</button><button type="button" data-lang="cs" aria-pressed="false">CS</button></div>
-<a class="btn btn-ghost hide-sm" data-i18n="s8" href="#banks">Book a bank pilot</a>
-<a class="btn btn-primary" data-i18n="s7" href="#start">Run a free check</a>
-<button aria-controls="navlinks" aria-expanded="false" aria-label="Open menu" class="nav-toggle" data-i18n-aria="s235" id="navtoggle">
-<svg aria-hidden="true" height="18" viewbox="0 0 18 18" width="18"><path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path></svg>
-</button>
-</div>
+    <ul id="navlinks">
+      <li><a href="#how" data-i18n="nav.how">How it works</a></li>
+      <li><a href="#people" data-i18n="nav.people">Who we protect</a></li>
+      <li><a href="#banks" data-i18n="nav.banks">For banks</a></li>
+      <li><a href="#recovery" data-i18n="nav.recovery">After a scam</a></li>
+      <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
+      <li><a href="#company" data-i18n="nav.company">Company</a></li>
+      <li class="menu-only"><a href="#start" data-i18n="cta.access">Get early access</a></li>
+    </ul>
+    <span class="spacer"></span>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="de" aria-pressed="false">DE</button><button type="button" data-lang="cs" aria-pressed="false">CS</button></div>
+    <a class="btn btn-ghost hide-sm" href="#banks" data-i18n="cta.bank">Partner as a bank</a>
+    <a class="btn btn-primary" href="#start" data-i18n="cta.access">Get early access</a>
+    <button class="nav-toggle" id="navtoggle" aria-label="Open menu" data-i18n-aria="aria.menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
 </header>
+
 <main>
 <!-- HERO -->
 <section class="hero band">
-<div class="hero-photo" id="heroPhoto"></div>
-<div class="wrap">
-<span class="meta" data-i18n="s9">Vallbruna SE · European trust infrastructure</span>
-<h1 data-i18n="s10">Verify before money <em class="s">moves.</em></h1>
-<p class="sub" data-i18n="s11">AI can now forge any bank statement, investor, invoice or voice. Vallbruna checks the document, the company and the person behind it in under a second, and seals the evidence if fraud has already happened.</p>
-<div class="ctas">
-<a class="btn btn-primary" data-i18n="s12" href="#start">Check your exposure, free</a>
-<a class="btn btn-ghost" data-i18n="s13" href="#banks">Book a 60-day pilot</a>
-</div>
-<div class="stage">
-<div aria-label="Example checks" class="tabs" data-i18n-aria="s236" role="tablist">
-<button aria-selected="true" class="tab" data-i18n="s14" data-k="doc" id="t-doc" role="tab">Bank statement</button>
-<button aria-selected="false" class="tab" data-i18n="s15" data-k="inv" id="t-inv" role="tab">Supplier invoice</button>
-<button aria-selected="false" class="tab" data-i18n="s16" data-k="vc" id="t-vc" role="tab">Investor offer</button>
-<button aria-selected="false" class="tab" data-i18n="s17" data-k="msg" id="t-msg" role="tab">Family message</button>
-</div>
-<article aria-live="polite" class="report">
-<div class="report-head">
-<div aria-hidden="true" class="dots"><i></i><i></i><i></i></div>
-<span class="file" data-i18n="s18" id="r-file">Kontoauszug_2026-10.pdf</span>
-<span class="tag" data-i18n="s19">Example · fictional data</span>
-</div>
-<div class="report-body">
-<ul class="checks" id="r-checks"></ul>
-<aside class="verdict">
-<div><div class="label" data-i18n="s20">Verdict</div><div class="big bad" data-i18n="s21" id="r-verdict">Manipulated</div></div>
-<div><div class="label" data-i18n="s22" id="r-score-l">Risk 92 / 100</div><div aria-hidden="true" class="meter"><span id="r-meter" style="width:92%"></span></div></div>
-<p class="act" data-i18n="s23" id="r-act">Do not underwrite on this file. Request the statement directly from the issuing bank.</p>
-<div><div class="label" data-i18n="s24">Evidence seal · SHA-256</div><div class="hash" data-i18n="s25" id="r-hash">9f3c2a71e0b84d5f6a19c07e2bd4483e51f0a6c97d2e18b4c3f57a9061d2e8bc</div></div>
-</aside>
-</div>
-<div class="report-foot" data-i18n="s26" id="r-foot">11 rules run · 3 fired · ruleset v2026.11.2 · 184 ms · zero outbound calls</div>
-</article>
-</div>
-</div>
+  <div class="hero-photo" id="heroPhoto"></div>
+  <div class="wrap">
+    <span class="meta" data-i18n="hero.meta">Vallbruna SE · Europe's scam check</span>
+    <h1 data-i18n="hero.h1">Is this a scam? <em class="s">Ask before you pay.</em></h1>
+    <p class="sub" data-i18n="hero.sub">A call, a message, an email, an investment tip, a job offer, a contract, an investor. AI makes every scam look real. Share it with Vallbruna and get a clear answer in seconds: what's wrong, how sure we are, and what to do next.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#start" data-i18n="cta.access">Get early access</a>
+      <a class="btn btn-ghost" href="#banks" data-i18n="cta.bank">Partner as a bank</a>
+    </div>
+
+    <div class="stage">
+      <div class="tabs" role="tablist" aria-label="Example checks" data-i18n-aria="aria.examples">
+        <button class="tab" role="tab" aria-selected="true" data-k="mum" data-i18n="tab.mum">Message from “Mum”</button>
+        <button class="tab" role="tab" aria-selected="false" data-k="call" data-i18n="tab.call">Cold call</button>
+        <button class="tab" role="tab" aria-selected="false" data-k="tip" data-i18n="tab.tip">Investment tip</button>
+        <button class="tab" role="tab" aria-selected="false" data-k="job" data-i18n="tab.job">Job abroad</button>
+        <button class="tab" role="tab" aria-selected="false" data-k="vc" data-i18n="tab.vc">Investor offer</button>
+        <button class="tab" role="tab" aria-selected="false" data-k="inv" data-i18n="tab.inv">Supplier email</button>
+      </div>
+      <article class="report" aria-live="polite">
+        <div class="report-head">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="file" id="r-src"></span>
+          <span class="tag" data-i18n="demo.tag">Example · fictional</span>
+        </div>
+        <div class="report-body">
+          <div class="leftcol">
+            <blockquote class="shared" id="r-quote"></blockquote>
+            <ul class="checks" id="r-checks"></ul>
+          </div>
+          <aside class="verdict">
+            <div><div class="label" data-i18n="demo.verdict">Verdict</div><div class="big bad" id="r-verdict"></div></div>
+            <div><div class="label" id="r-score-l"></div><div class="meter" aria-hidden="true"><span id="r-meter"></span></div></div>
+            <div><div class="label" data-i18n="demo.todo">What to do</div><p class="act" id="r-act"></p></div>
+          </aside>
+        </div>
+        <div class="report-foot" id="r-foot"></div>
+      </article>
+    </div>
+  </div>
 </section>
-<!-- REGULATION STRIP -->
+
+<!-- SHARE ANYTHING -->
 <div class="strip band">
-<div class="wrap">
-<span class="lbl" data-i18n="s27">Built for the rules European finance runs on</span>
-<ul>
-<li>DORA</li><li>GDPR</li><li data-i18n="s28">EU AI Act</li><li data-i18n="s29">Verification of Payee</li><li>PSR / PSD3</li><li>§ 47 KWG</li><li>FINMA</li>
-</ul>
+  <div class="wrap">
+    <span class="lbl" data-i18n="fmt.label">Share anything that involves money</span>
+    <ul class="fmts">
+      <li data-i18n="fmt.calls">Phone calls</li><li data-i18n="fmt.chat">WhatsApp &amp; SMS</li><li data-i18n="fmt.email">Emails</li><li data-i18n="fmt.links">Links &amp; websites</li><li data-i18n="fmt.shots">Screenshots</li><li data-i18n="fmt.invest">Investment offers</li><li data-i18n="fmt.jobs">Job &amp; relocation offers</li><li data-i18n="fmt.docs">Contracts &amp; invoices</li><li data-i18n="fmt.people">Investors &amp; companies</li><li data-i18n="fmt.crypto">Crypto wallets</li>
+    </ul>
+  </div>
 </div>
-</div>
-<!-- PLATFORM / VOP -->
-<section class="s band" id="platform">
-<div class="wrap">
-<div class="s-head">
-<span class="eyebrow" data-i18n="s30">Why now</span>
-<h2 data-i18n="s31">The payee's name checks out. <em class="s">The deal behind it doesn't.</em></h2>
-<p class="lead" data-i18n="s32">Since October 2025, every euro transfer runs through Verification of Payee. It confirms that the name matches the IBAN. A forged invoice, a cloned company or a fake investor with a real bank account passes it.</p>
-</div>
-<div class="compare">
-<div class="cmp">
-<span class="eyebrow" data-i18n="s29">Verification of Payee</span>
-<h3 data-i18n="s33">Checks the label on the box</h3>
-<ul>
-<li><span class="mk y">✓</span><span data-i18n="s34">IBAN holder name matches the name you typed</span></li>
-<li><span class="mk n">—</span><span data-i18n="s35">Whether the invoice or statement was edited</span></li>
-<li><span class="mk n">—</span><span data-i18n="s36">Whether the company is 19 days old or licensed</span></li>
-<li><span class="mk n">—</span><span data-i18n="s37">Whether the investor, recruiter or relative is real</span></li>
-<li><span class="mk n">—</span><span data-i18n="s38">Evidence you can file after a loss</span></li>
-</ul>
-</div>
-<div class="cmp us">
-<span class="eyebrow" data-i18n="s39" style="color:var(--accent)">Vallbruna</span>
-<h3 data-i18n="s40">Checks what is inside it</h3>
-<ul>
-<li><span class="mk y">✓</span><span data-i18n="s41"><b>Document forensics:</b> editor traces, white-out layers, recomputed balances</span></li>
-<li><span class="mk y">✓</span><span data-i18n="s42"><b>Live registries:</b> company age, directors, VAT, regulator licences</span></li>
-<li><span class="mk y">✓</span><span data-i18n="s43"><b>Links and code:</b> lookalike domains, drainer contracts, malware tests</span></li>
-<li><span class="mk y">✓</span><span data-i18n="s44"><b>Authorship:</b> does this message read like the person it claims to be</span></li>
-<li><span class="mk y">✓</span><span data-i18n="s45"><b>Sealed evidence:</b> every verdict is hashed and ready to file</span></li>
-</ul>
-</div>
-</div>
-</div>
+
+<!-- WHAT CHANGED -->
+<section class="s band" id="shift">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow" data-i18n="shift.eyebrow">What changed</span>
+      <h2 data-i18n="shift.h2">The old warning signs <em class="s">are gone.</em></h2>
+      <p class="lead" data-i18n="shift.lead">Three years ago you could spot a scam by its broken English, its amateur website or its obviously fake document. Today scammers use AI too. Their emails are flawless, their websites look professional and their documents look real.</p>
+    </div>
+    <div class="shift">
+      <div class="srow"><div class="then"><span class="sl" data-i18n="shift.then">Then</span><span class="t" data-i18n="shift.r1t">Emails full of spelling mistakes</span></div><span class="arr" aria-hidden="true">→</span><div class="now"><span class="sl" data-i18n="shift.now">Now</span><span class="t" data-i18n="shift.r1n">Perfect emails in any language, written by AI</span></div></div>
+      <div class="srow"><div class="then"><span class="sl" data-i18n="shift.then">Then</span><span class="t" data-i18n="shift.r2t">Amateur websites</span></div><span class="arr" aria-hidden="true">→</span><div class="now"><span class="sl" data-i18n="shift.now">Now</span><span class="t" data-i18n="shift.r2n">Professional websites built in minutes</span></div></div>
+      <div class="srow"><div class="then"><span class="sl" data-i18n="shift.then">Then</span><span class="t" data-i18n="shift.r3t">Obviously fake documents</span></div><span class="arr" aria-hidden="true">→</span><div class="now"><span class="sl" data-i18n="shift.now">Now</span><span class="t" data-i18n="shift.r3n">Forged statements and contracts that pass a visual check</span></div></div>
+      <div class="srow"><div class="then"><span class="sl" data-i18n="shift.then">Then</span><span class="t" data-i18n="shift.r4t">A stranger's voice on the phone</span></div><span class="arr" aria-hidden="true">→</span><div class="now"><span class="sl" data-i18n="shift.now">Now</span><span class="t" data-i18n="shift.r4n">The cloned voice of someone you love</span></div></div>
+    </div>
+    <p class="shift-end" data-i18n="shift.end">When scammers use AI, you need AI built to catch them. <strong>That is Vallbruna.</strong></p>
+  </div>
 </section>
+
+<!-- HOW IT WORKS -->
+<section class="s band" id="how">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
+      <h2 data-i18n="how.h2">Share it. We check it. <em class="s">You decide.</em></h2>
+      <p class="lead" data-i18n="how.lead">One tap from your phone, your browser or your bank's app. Vallbruna checks facts first, not just patterns, and explains the answer in plain words.</p>
+    </div>
+    <ol class="howsteps">
+      <li><span class="hn">01</span><h3 data-i18n="how.s1h">Share</h3><p data-i18n="how.s1p">Forward a message, upload a call recording, paste a link or take a screenshot. From the Vallbruna app, your browser or your bank's app.</p></li>
+      <li><span class="hn">02</span><h3 data-i18n="how.s2h">Check</h3><p data-i18n="how.s2p">Vallbruna verifies what can be verified: company registers, regulator warning lists, website age, bank details, voice and writing, and thousands of known scam patterns.</p></li>
+      <li><span class="hn">03</span><h3 data-i18n="how.s3h">Act</h3><p data-i18n="how.s3p">A clear verdict, the evidence behind it and the next step: block it, call back on a number you trust, alert your family, or report it.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- VOP -->
+<section class="s band" id="why" style="padding-top:0">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow" data-i18n="why.eyebrow">Why now</span>
+      <h2 data-i18n="why.h2">Your bank checks the name. <em class="s">Not the story behind it.</em></h2>
+      <p class="lead" data-i18n="why.lead">Since October 2025, euro-area banks must check that a payee's name matches the IBAN before you send money. That catches typos and some fraud. It does not catch a fake investment, a fake relative or a fake job that uses a real bank account.</p>
+    </div>
+    <div class="compare">
+      <div class="cmp">
+        <span class="eyebrow" data-i18n="why.vop">Name check (Verification of Payee)</span>
+        <h3 data-i18n="why.vopH">Checks the label on the box</h3>
+        <ul>
+          <li><span class="mk y">✓</span><span data-i18n="why.v1">The account holder's name matches the IBAN</span></li>
+          <li><span class="mk n">—</span><span data-i18n="why.v2">Whether the offer is real</span></li>
+          <li><span class="mk n">—</span><span data-i18n="why.v3">Whether the caller is who they say</span></li>
+          <li><span class="mk n">—</span><span data-i18n="why.v4">Whether the company is licensed</span></li>
+          <li><span class="mk n">—</span><span data-i18n="why.v5">Help after a loss</span></li>
+        </ul>
+      </div>
+      <div class="cmp us">
+        <span class="eyebrow" style="color:var(--accent)">Vallbruna</span>
+        <h3 data-i18n="why.usH">Checks what is inside it</h3>
+        <ul>
+          <li><span class="mk y">✓</span><span data-i18n="why.u1"><b>The offer:</b> impossible returns, upfront fees, fake urgency</span></li>
+          <li><span class="mk y">✓</span><span data-i18n="why.u2"><b>The sender:</b> voice, writing style, phone number and email address</span></li>
+          <li><span class="mk y">✓</span><span data-i18n="why.u3"><b>The company:</b> registers, licences and regulator warnings</span></li>
+          <li><span class="mk y">✓</span><span data-i18n="why.u4"><b>Links and documents:</b> cloned sites, edited PDFs, changed bank details</span></li>
+          <li><span class="mk y">✓</span><span data-i18n="why.u5"><b>After a loss:</b> evidence and reporting across borders</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHO WE PROTECT -->
 <section class="s band" id="people" style="padding-top:0">
-<div class="wrap">
-<div class="s-head">
-<span class="eyebrow" data-i18n="s2">Who we protect</span>
-<h2 data-i18n="s46">One trust layer for everyone <em class="s">money touches.</em></h2>
-</div>
-<div class="people">
-<a class="pcard wide" href="#banks"><div class="ph ph-bank"></div><div class="in"><span class="who" data-i18n="s47">Banks &amp; lenders</span><h3 data-i18n="s48">Catch the edited statement before you lend.</h3><p data-i18n="s49">About 6% of financial documents show signs of manipulation. Vallbruna recomputes every line and flags every edit.</p></div></a>
-<a class="pcard wide" href="#pricing"><div class="ph ph-founder"></div><div class="in"><span class="who" data-i18n="s50">Founders &amp; VC funds</span><h3 data-i18n="s51">Know the investor is real before you pay the retainer.</h3><p data-i18n="s52">Fake family offices and cloned fund domains target every founder listed as raising. One check costs less than one call.</p></div></a>
-<a class="pcard" href="#pricing"><div class="ph ph-port"></div><div class="in"><span class="who" data-i18n="s53">Importers &amp; logistics</span><h3 data-i18n="s54">Pay the supplier, not the clone.</h3><p data-i18n="s55">VAT IDs, company age and sudden IBAN changes, checked before release.</p></div></a>
-<a class="pcard" href="#pricing"><div class="ph ph-senior"></div><div class="in"><span class="who" data-i18n="s56">Families &amp; seniors</span><h3 data-i18n="s57">"Mum, it's me, new number."</h3><p data-i18n="s58">Senior Shield compares the message with how your family actually writes, and alerts a relative in one tap.</p></div></a>
-<a class="pcard" href="#pricing"><div class="ph ph-travel"></div><div class="in"><span class="who" data-i18n="s59">Travellers &amp; job seekers</span><h3 data-i18n="s60">Real booking, fake refund link.</h3><p data-i18n="s61">Off-domain payment links, ghost recruiters and cloned visa portals, blocked before you click.</p></div></a>
-</div>
-</div>
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow" data-i18n="people.eyebrow">Who we protect</span>
+      <h2 data-i18n="people.h2">Everyone <em class="s">money touches.</em></h2>
+    </div>
+    <div class="people">
+      <a class="pcard wide" href="#pricing"><div class="ph ph-senior"></div><div class="in"><span class="who" data-i18n="p.fam.who">Families &amp; seniors</span><h3 data-i18n="p.fam.h">“Mum, it's me, new number.”</h3><p data-i18n="p.fam.p">Senior Shield checks calls and messages for your parents and alerts you the moment someone tries.</p></div></a>
+      <a class="pcard wide" href="#pricing"><div class="ph ph-savers"></div><div class="in"><span class="who" data-i18n="p.inv.who">Savers &amp; investors</span><h3 data-i18n="p.inv.h">Check the offer before you invest.</h3><p data-i18n="p.inv.p">Fake brokers, crypto platforms and celebrity ads, checked against regulator registers and warning lists.</p></div></a>
+      <a class="pcard" href="#pricing"><div class="ph ph-travel"></div><div class="in"><span class="who" data-i18n="p.job.who">Job seekers &amp; travellers</span><h3 data-i18n="p.job.h">Real booking, fake refund link.</h3><p data-i18n="p.job.p">Ghost recruiters, visa fees and refund links, flagged before you click or pay.</p></div></a>
+      <a class="pcard" href="#pricing"><div class="ph ph-port"></div><div class="in"><span class="who" data-i18n="p.biz.who">Businesses &amp; founders</span><h3 data-i18n="p.biz.h">Pay the supplier, not the clone.</h3><p data-i18n="p.biz.p">Invoices, changed bank details, fake investors and forged documents.</p></div></a>
+      <a class="pcard" href="#banks"><div class="ph ph-bank"></div><div class="in"><span class="who" data-i18n="p.bank.who">Banks</span><h3 data-i18n="p.bank.h">Fewer scams. Fewer refunds.</h3><p data-i18n="p.bank.p">Give every customer Vallbruna inside your banking app.</p></div></a>
+    </div>
+  </div>
 </section>
-<!-- EIGHT FRONTS -->
-<section class="s band" style="padding-top:0">
-<div class="wrap">
-<div class="s-head">
-<span class="eyebrow" data-i18n="s62">Coverage</span>
-<h2 data-i18n="s63">Eight fraud fronts. <em class="s">One forensic core.</em></h2>
-<p class="lead" data-i18n="s64">Each front is a rule pack on the same engine, so every confirmed case makes the others sharper.</p>
-</div>
-<div class="fronts">
-<div class="front"><div class="n"><span data-i18n="s65">Loan documents</span><span data-i18n="s66">Phase 1</span></div><h3 data-i18n="s67">Altered statements &amp; pay stubs</h3><p data-i18n="s68">Editor metadata, overlay layers and exact running-balance math.</p></div>
-<div class="front"><div class="n"><span data-i18n="s69">B2B invoices</span><span data-i18n="s66">Phase 1</span></div><h3 data-i18n="s70">Vendor clones &amp; IBAN swaps</h3><p data-i18n="s71">VIES validation, shelf-company signals, invoice tamper checks.</p></div>
-<div class="front"><div class="n"><span data-i18n="s72">Fundraising</span><span data-i18n="s66">Phase 1</span></div><h3 data-i18n="s73">Fake investors &amp; dealmakers</h3><p data-i18n="s74">Regulator licences, signing authority, cloned fund domains.</p></div>
-<div class="front"><div class="n"><span data-i18n="s75">Visa &amp; work</span><span data-i18n="s76">Phase 2</span></div><h3 data-i18n="s77">Fake agencies &amp; permits</h3><p data-i18n="s78">Sponsor registries, agency licences, visa PDF metadata.</p></div>
-<div class="front"><div class="n"><span data-i18n="s79">Crypto</span><span data-i18n="s76">Phase 2</span></div><h3 data-i18n="s80">Cloned exchanges &amp; drainers</h3><p data-i18n="s81">Domain age, BaFin, FCA, FINMA, FMA and SEC registers, bytecode scans.</p></div>
-<div class="front"><div class="n"><span data-i18n="s82">Travel &amp; shopping</span><span data-i18n="s76">Phase 2</span></div><h3 data-i18n="s83">Refund links &amp; fake stores</h3><p data-i18n="s84">Off-domain payment URLs, new storefronts, merchant registries.</p></div>
-<div class="front"><div class="n"><span data-i18n="s85">Jobs</span><span data-i18n="s86">Phase 3</span></div><h3 data-i18n="s87">Ghost recruiters &amp; malware tests</h3><p data-i18n="s88">Official career portals, off-platform pivots, static repo scans.</p></div>
-<div class="front"><div class="n"><span data-i18n="s89">Family</span><span data-i18n="s86">Phase 3</span></div><h3 data-i18n="s90">Hijacked accounts &amp; voice clones</h3><p data-i18n="s91">Authorship stylometry, voice artefacts, one-tap family alerts.</p></div>
-</div>
-</div>
+
+<!-- BANKS -->
+<section class="s band" id="banks" style="padding-top:0">
+  <div class="wrap banks">
+    <div>
+      <span class="eyebrow" data-i18n="bank.eyebrow">For banks</span>
+      <h2 style="font-size:clamp(34px,4.6vw,56px);margin-top:18px" data-i18n="bank.h2">Give every customer Vallbruna. <em class="s">Refund fewer scams.</em></h2>
+      <p class="lead" style="margin-top:18px" data-i18n="bank.lead">Under the EU's new Payment Services Regulation, banks will reimburse more scam victims, including when fraudsters pose as the bank itself. Every scam stopped before the transfer is a refund you never pay.</p>
+      <div class="bank-points">
+        <div><b data-i18n="bank.p1h">Inside your app</b><span data-i18n="bank.p1p">Vallbruna under your brand in mobile banking, or as a co-branded app. Customers check anything with one tap.</span></div>
+        <div><b data-i18n="bank.p2h">Priced per active customer</b><span data-i18n="bank.p2p">A small monthly fee per active account, set against the cost of the scams it prevents.</span></div>
+        <div><b data-i18n="bank.p3h">Your data stays with you</b><span data-i18n="bank.p3p">Run Vallbruna inside your own network with no outbound calls, or in our EU cloud. Prepared for DORA review, with exit plan, SBOM and audit rights.</span></div>
+        <div><b data-i18n="bank.p4h">Evidence for every claim</b><span data-i18n="bank.p4p">When a customer is scammed anyway, the Recovery Desk gives your fraud team a sealed, translated case file.</span></div>
+      </div>
+    </div>
+    <div class="spec">
+      <h3><span data-i18n="bank.specH" style="font:inherit;color:inherit;letter-spacing:0;text-transform:none">Bank partnership</span> <span data-i18n="bank.specTag">Planned terms</span></h3>
+      <dl>
+        <dt data-i18n="bank.d1">Model</dt><dd data-i18n="bank.d1v">White-label or co-branded</dd>
+        <dt data-i18n="bank.d2">Price</dt><dd data-i18n="bank.d2v">€0.50 – €1.50 per active account per month</dd>
+        <dt data-i18n="bank.d3">Start</dt><dd data-i18n="bank.d3v">60-day pilot with one customer group</dd>
+        <dt data-i18n="bank.d4">Deployment</dt><dd data-i18n="bank.d4v">Your network or our EU cloud</dd>
+        <dt data-i18n="bank.d5">Also available</dt><dd data-i18n="bank.d5v">Document and invoice checks for lending</dd>
+        <dt data-i18n="bank.d6">Prepared for</dt><dd data-i18n="bank.d6v">DORA, GDPR and PSR review</dd>
+      </dl>
+    </div>
+  </div>
 </section>
+
 <!-- ENGINE -->
 <section class="s band dark" id="engine">
-<div class="wrap">
-<div class="s-head">
-<span class="eyebrow" data-i18n="s92">The engine</span>
-<h2 data-i18n="s93">Deterministic code first. <em class="s">AI last.</em></h2>
-<p class="lead" data-i18n="s94">Every verdict a bank acts on comes from reproducible code: parsed structure, exact arithmetic, a live registry answer. Models help explain, never decide alone. Every rule that fires is listed, versioned and auditable.</p>
-</div>
-<div class="pillars">
-<div class="pillar"><span class="code">P1</span><h3 data-i18n="s95">Document forensics</h3><p data-i18n="s96">PDF structure, editor fingerprints and issuer templates for the top 15 DACH banks.</p></div>
-<div class="pillar"><span class="code">P2</span><h3 data-i18n="s97">Registries &amp; regulators</h3><p data-i18n="s98">Handelsregister, Companies House, GLEIF, VIES, OpenSanctions, WHOIS.</p></div>
-<div class="pillar"><span class="code">P3</span><h3 data-i18n="s99">Authorship &amp; voice</h3><p data-i18n="s100">Stylometry against your contact's own messages, plus synthetic-voice artefacts.</p></div>
-<div class="pillar"><span class="code">P4</span><h3 data-i18n="s101">Link &amp; code sandbox</h3><p data-i18n="s102">Static analysis of URLs, repositories and smart-contract bytecode.</p></div>
-<div class="pillar"><span class="code">P5</span><h3 data-i18n="s103">Scam signature graph</h3><p data-i18n="s104">Hashed indicators from every confirmed case. Signals shared, people not.</p></div>
-</div>
-<div class="principle">
-<span class="eq" data-i18n="s105">Decimal("2418.60") ≠ Decimal("12418.60")</span>
-<p data-i18n="s106">Balances are recomputed with exact decimal arithmetic, line by line. A single edited digit cannot hide behind floating-point rounding.</p>
-</div>
-<div class="zones">
-<div>
-<span class="eyebrow" data-i18n="s107">Sovereign by design</span>
-<h3 data-i18n="s108">Your data never leaves the bank. Or Europe.</h3>
-<p class="lead" data-i18n="s109">Banks run Vallbruna as a container inside their own network, with zero outbound calls. No outsourcing review, no secrecy waiver. Everyone else uses our EU-hosted cloud, split into three zones.</p>
-</div>
-<div class="zstack">
-<div class="zone"><span class="z">ZONE 1</span><div><b data-i18n="s110">Identity vault</b><span data-i18n="s111">Names, phones, IBANs become reversible pseudonyms. Keys stay in an EU HSM.</span></div></div>
-<div class="zone c"><span class="z">ZONE 2</span><div><b data-i18n="s112">Forensic compute</b><span data-i18n="s113">Sees only pseudonymised files. Raw documents never go to an outside AI model.</span></div></div>
-<div class="zone"><span class="z">ZONE 3</span><div><b data-i18n="s114">Signals &amp; sealed evidence</b><span data-i18n="s115">Hashed indicators and sealed dossiers, released only on your instruction.</span></div></div>
-</div>
-</div>
-</div>
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow" data-i18n="eng.eyebrow">Under the hood</span>
+      <h2 data-i18n="eng.h2">Facts first. <em class="s">AI second.</em></h2>
+      <p class="lead" data-i18n="eng.lead">An AI opinion is not enough when money is at stake. Vallbruna first checks everything it can against real sources, then uses AI to read calls, messages and documents. Every verdict lists the reasons behind it.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><span class="code">01</span><h3 data-i18n="eng.p1h">Registers &amp; regulators</h3><p data-i18n="eng.p1p">Company registers, licences, sanctions and regulator warning lists across Europe.</p></div>
+      <div class="pillar"><span class="code">02</span><h3 data-i18n="eng.p2h">Links &amp; websites</h3><p data-i18n="eng.p2p">Website age, hidden owners, lookalike addresses, cloned sites and wallet drainers.</p></div>
+      <div class="pillar"><span class="code">03</span><h3 data-i18n="eng.p3h">Voice &amp; writing</h3><p data-i18n="eng.p3p">Call transcripts, signs of a cloned voice, and whether a message sounds like your contact.</p></div>
+      <div class="pillar"><span class="code">04</span><h3 data-i18n="eng.p4h">Documents &amp; numbers</h3><p data-i18n="eng.p4p">Edited PDFs, recalculated balances, changed bank details and forged contracts.</p></div>
+      <div class="pillar"><span class="code">05</span><h3 data-i18n="eng.p5h">Scam pattern network</h3><p data-i18n="eng.p5p">Every confirmed scam sharpens the next check. We share signals, never people.</p></div>
+    </div>
+
+    <div class="zones">
+      <div>
+        <span class="eyebrow" data-i18n="zone.eyebrow">Built in Europe</span>
+        <h3 data-i18n="zone.h">Your data stays in Europe.</h3>
+        <p class="lead" data-i18n="zone.lead">Personal details are separated from what we analyse and replaced with pseudonyms. Banks can run Vallbruna inside their own network. Your files are never sent to outside AI models.</p>
+      </div>
+      <div class="zstack">
+        <div class="zone"><span class="z" data-i18n="zone.z1">ZONE 1</span><div><b data-i18n="zone.z1h">Identity vault</b><span data-i18n="zone.z1p">Names, phone numbers and IBANs become reversible pseudonyms. Keys stay in an EU hardware vault.</span></div></div>
+        <div class="zone c"><span class="z" data-i18n="zone.z2">ZONE 2</span><div><b data-i18n="zone.z2h">Analysis</b><span data-i18n="zone.z2p">Sees only pseudonymised content. Nothing leaves for an outside AI model.</span></div></div>
+        <div class="zone"><span class="z" data-i18n="zone.z3">ZONE 3</span><div><b data-i18n="zone.z3h">Signals &amp; sealed evidence</b><span data-i18n="zone.z3p">Scam signals and sealed case files, released only when you say so.</span></div></div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- MODE B -->
+
+<!-- RECOVERY -->
 <section class="s band dark" id="recovery" style="padding-top:0">
-<div class="wrap modeb">
-<div>
-<span class="eyebrow" data-i18n="s116">When it has already happened</span>
-<h2 data-i18n="s117" style="font-size:clamp(34px,4.8vw,60px);margin-top:18px">Your loss crossed a border. <em class="s">Your evidence can too.</em></h2>
-<p class="lead" data-i18n="s118" style="margin-top:18px">Around 90% of cross-border scam victims recover nothing, often because no one can file in the right place, in the right language, in time. The Recovery Desk turns what you have into a sealed, translated dossier.</p>
-<ol class="steps">
-<li><div><b data-i18n="s119">Contain</b><span data-i18n="s120">A step-by-step checklist for your bank recall, cards and accounts, in minutes.</span></div></li>
-<li><div><b data-i18n="s121">Seal</b><span data-i18n="s122">Original files, timeline and findings, hashed so nobody can dispute they were altered.</span></div></li>
-<li><div><b data-i18n="s123">Translate</b><span data-i18n="s124">Into the language of the country where the money went, reviewed by a person.</span></div></li>
-<li><div><b data-i18n="s125">Route</b><span data-i18n="s126">The right cybercrime unit, financial intelligence unit, regulator and receiving bank.</span></div></li>
-</ol>
-<p class="fine" data-i18n="s127">Vallbruna prepares evidence. You, your lawyer or your bank file it. We do not provide legal representation.</p>
-</div>
-<div class="dossier">
-<div class="dcard">
-<div class="row"><span data-i18n="s128">Dossier</span><span>VB-2026-11-04821</span></div>
-<div class="row"><span data-i18n="s125">Route</span><span data-i18n="s129">Munich → Tbilisi</span></div>
-<div class="row"><span data-i18n="s130">Exhibits</span><span data-i18n="s131">14 files · 3 transfers · 1 domain</span></div>
-<div class="row"><span data-i18n="s121">Seal</span><span data-i18n="s132">sha256 · 5e1a…c09b</span></div>
-<div aria-label="Dossier languages" class="langs" data-i18n-aria="s237"><i>DE</i><i>EN</i><i class="on">KA · ქართული</i><i>FR</i><i>ES</i><i>TR</i></div>
-</div>
-</div>
-</div>
+  <div class="wrap modeb">
+    <div>
+      <span class="eyebrow" data-i18n="rec.eyebrow">If it has already happened</span>
+      <h2 style="font-size:clamp(34px,4.8vw,60px);margin-top:18px" data-i18n="rec.h2">Your money crossed a border. <em class="s">Your evidence can too.</em></h2>
+      <p class="lead" style="margin-top:18px" data-i18n="rec.lead">Around 90% of cross-border scam victims get nothing back, often because nobody reports it in the right place, in the right language, in time. The Recovery Desk turns what you have into a sealed, translated case file.</p>
+      <ol class="steps">
+        <li><div><b data-i18n="rec.s1h">Contain</b><span data-i18n="rec.s1p">A step-by-step checklist for your bank, cards and accounts, in minutes.</span></div></li>
+        <li><div><b data-i18n="rec.s2h">Seal</b><span data-i18n="rec.s2p">Your files, the timeline and our findings, sealed so anyone can verify nothing changed after you submitted them.</span></div></li>
+        <li><div><b data-i18n="rec.s3h">Translate</b><span data-i18n="rec.s3p">Into the language of the country where the money went, checked by a person.</span></div></li>
+        <li><div><b data-i18n="rec.s4h">Route</b><span data-i18n="rec.s4p">To the right cybercrime unit, financial intelligence unit, regulator and receiving bank.</span></div></li>
+      </ol>
+      <p class="fine" data-i18n="rec.fine">Vallbruna prepares the evidence. You, your lawyer or your bank submit it. We do not provide legal representation.</p>
+    </div>
+    <div class="dossier">
+      <div class="dcard">
+        <div class="row"><span data-i18n="rec.c1">Case file</span><span>VB-2026-11-04821</span></div>
+        <div class="row"><span data-i18n="rec.c2">Route</span><span data-i18n="rec.c2v">Munich → Tbilisi</span></div>
+        <div class="row"><span data-i18n="rec.c3">Evidence</span><span data-i18n="rec.c3v">6 calls · 3 transfers · 1 website</span></div>
+        <div class="row"><span data-i18n="rec.c4">Seal</span><span>sha256 · 5e1a…c09b</span></div>
+        <div class="langs" aria-label="Case file languages" data-i18n-aria="aria.langs"><i>DE</i><i>EN</i><i class="on">KA · ქართული</i><i>FR</i><i>ES</i><i>TR</i></div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- BANKS -->
-<section class="s band" id="banks">
-<div class="wrap banks">
-<div>
-<span class="eyebrow" data-i18n="s133">For banks &amp; lenders</span>
-<h2 data-i18n="s134" style="font-size:clamp(34px,4.6vw,56px);margin-top:18px">Prove it on your own files <em class="s">in 60 days.</em></h2>
-<p class="lead" data-i18n="s135" style="margin-top:18px">Start in shadow mode on historical and live documents. No decisions change until the numbers clear your bar.</p>
-<div class="bank-points">
-<div><b data-i18n="s136">Ready for DORA on day one</b><span data-i18n="s137">Software that runs inside your perimeter, plus a full ICT third-party pack: exit plan, SBOM, audit rights.</span></div>
-<div><b data-i18n="s138">Ahead of PSR liability</b><span data-i18n="s139">Prevention evidence before a payment, claims evidence after one, from the same engine.</span></div>
-<div><b data-i18n="s140">One contract, a European SE</b><span data-i18n="s141">Vallbruna SE is an incorporated European public company, ready for vendor onboarding now.</span></div>
-</div>
-</div>
-<div class="spec">
-<h3>Pilot terms <span data-i18n="s142">Shadow mode</span></h3>
-<dl>
-<dt data-i18n="s143">Duration</dt><dd data-i18n="s144">60 days</dd>
-<dt data-i18n="s145">Fee</dt><dd data-i18n="s146">€20k – €40k, credited to year 1</dd>
-<dt data-i18n="s147">Volume</dt><dd data-i18n="s148">5,000 – 10,000 documents</dd>
-<dt data-i18n="s149">Precision</dt><dd data-i18n="s150">≥ 95%</dd>
-<dt data-i18n="s151">Recall</dt><dd data-i18n="s152">≥ 85%</dd>
-<dt data-i18n="s153">False positives</dt><dd data-i18n="s154">≤ 1.0% on top-15 DACH issuers</dd>
-<dt data-i18n="s155">Latency</dt><dd data-i18n="s156">&lt; 200 ms p95, in your VPC</dd>
-<dt data-i18n="s157">First meeting</dt><dd data-i18n="s158">Benchmark, DORA pack, DPIA</dd>
-</dl>
-</div>
-</div>
-</section>
+
 <!-- NUMBERS -->
-<section class="s band" style="padding-top:0">
-<div class="wrap">
-<div class="s-head">
-<span class="eyebrow" data-i18n="s159">The scale of it</span>
-<h2 data-i18n="s160">Forgery is free now. <em class="s">The losses aren't.</em></h2>
-</div>
-<div class="nums">
-<div class="num"><span class="v" data-i18n="s161">€4.2B</span><p data-i18n="s162">EEA payment fraud reported in a single year</p><cite>EBA / ECB</cite></div>
-<div class="num"><span class="v" data-i18n="s163">$40B</span><p data-i18n="s164">Projected US fraud losses enabled by generative AI by 2027</p><cite data-i18n="s165">Deloitte</cite></div>
-<div class="num"><span class="v" data-i18n="s166">~6%</span><p data-i18n="s167">Of financial documents in lending show manipulation</p><cite data-i18n="s168">Inscribe</cite></div>
-<div class="num"><span class="v" data-i18n="s169">~90%</span><p data-i18n="s170">Of cross-border scam victims recover nothing</p><cite data-i18n="s171">Industry estimate</cite></div>
-</div>
-</div>
+<section class="s band">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow" data-i18n="num.eyebrow">The scale of it</span>
+      <h2 data-i18n="num.h2">AI made scams cheap. <em class="s">The losses aren't.</em></h2>
+    </div>
+    <div class="nums n3">
+      <div class="num"><span class="v" data-i18n="num.1v">€4.2B</span><p data-i18n="num.1p">payment fraud reported in the EEA in a single year</p><cite>EBA / ECB</cite></div>
+      <div class="num"><span class="v" data-i18n="num.2v">$40B</span><p data-i18n="num.2p">projected US fraud losses enabled by generative AI by 2027</p><cite>Deloitte</cite></div>
+      <div class="num"><span class="v" data-i18n="num.3v">~90%</span><p data-i18n="num.3p">of cross-border scam victims recover nothing</p><cite data-i18n="num.3c">Industry estimate</cite></div>
+    </div>
+  </div>
 </section>
+
 <!-- PRICING -->
 <section class="s band" id="pricing" style="padding-top:0">
-<div class="wrap">
-<div class="s-head">
-<span class="eyebrow" data-i18n="s5">Pricing</span>
-<h2 data-i18n="s172">Start free. <em class="s">Pay when it matters.</em></h2>
-</div>
-<div class="plans">
-<div class="plan"><span class="who" data-i18n="s173">Everyone</span><h3 data-i18n="s174">Free</h3><div class="price" data-i18n="s175">€0</div><ul><li data-i18n="s176">Public breach-exposure check</li><li data-i18n="s177">3 scans a month</li><li data-i18n="s178">Link and message checks</li></ul><a class="btn btn-line" data-i18n="s7" href="#start">Run a free check</a></div>
-<div class="plan feat"><span class="who" data-i18n="s179">Households</span><h3 data-i18n="s180">Family Shield</h3><div class="price" data-i18n="s181">$19.99<small> / month</small></div><ul><li data-i18n="s182">Up to 6 people, including Senior Shield</li><li data-i18n="s183">Unlimited scans</li><li data-i18n="s184">One-tap family alerts</li><li data-i18n="s185">Recovery Desk discount</li></ul><a class="btn btn-primary" data-i18n="s186" href="#start">Join the waitlist</a></div>
-<div class="plan"><span class="who" data-i18n="s187">Founders &amp; funds</span><h3 data-i18n="s188">Fundraising Shield</h3><div class="price" data-i18n="s189">$99<small> / investor check</small></div><ul><li data-i18n="s190">Round pass $299</li><li data-i18n="s191">Fund portfolio licences</li><li data-i18n="s192">Licence, domain and signing checks</li></ul><a class="btn btn-line" data-i18n="s193" href="#start">Check an investor</a></div>
-<div class="plan"><span class="who" data-i18n="s194">Business &amp; banks</span><h3 data-i18n="s195">API &amp; container</h3><div class="price" data-i18n="s196">From €0.25<small> / check</small></div><ul><li data-i18n="s197">Invoice and document integrity</li><li data-i18n="s198">Bank account bundling</li><li data-i18n="s199">APP-claims evidence module</li></ul><a class="btn btn-line" data-i18n="s200" href="#banks">Talk to us</a></div>
-</div>
-<p data-i18n="s201" style="margin-top:18px;font-size:14px;color:var(--muted)">Solo Shield $9.99 / month. Recovery Desk dossiers from $49.</p>
-</div>
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow" data-i18n="price.eyebrow">Pricing</span>
+      <h2 data-i18n="price.h2">Free through your bank. <em class="s">Or on your own.</em></h2>
+    </div>
+    <div class="plans">
+      <div class="plan"><span class="who" data-i18n="price.bank.who">Through your bank</span><h3 data-i18n="price.bank.h">Included</h3><div class="price">€0</div><ul><li data-i18n="price.bank.l1">Free when your bank partners with Vallbruna</li><li data-i18n="price.bank.l2">Unlimited checks</li><li data-i18n="price.bank.l3">Family alerts and Recovery Desk</li></ul><a class="btn btn-line" href="#banks" data-i18n="price.bank.btn">Ask your bank</a></div>
+      <div class="plan"><span class="who" data-i18n="price.free.who">Everyone</span><h3 data-i18n="price.free.h">Free</h3><div class="price">€0</div><ul><li data-i18n="price.free.l1">3 checks a month</li><li data-i18n="price.free.l2">Data-breach exposure check</li><li data-i18n="price.free.l3">Links, messages and calls</li></ul><a class="btn btn-line" href="#start" data-i18n="cta.access">Get early access</a></div>
+      <div class="plan feat"><span class="who" data-i18n="price.fam.who">Households</span><h3>Family Shield</h3><div class="price" data-i18n="price.fam.price">$19.99<small> / month</small></div><ul><li data-i18n="price.fam.l1">Up to 6 people, including Senior Shield</li><li data-i18n="price.fam.l2">Unlimited checks</li><li data-i18n="price.fam.l3">One-tap family alerts</li><li data-i18n="price.fam.l4">Recovery Desk discount</li></ul><a class="btn btn-primary" href="#start" data-i18n="cta.access">Get early access</a></div>
+      <div class="plan"><span class="who" data-i18n="price.biz.who">Businesses</span><h3 data-i18n="price.biz.h">Business Shield</h3><div class="price" data-i18n="price.biz.price">From $99<small> / month</small></div><ul><li data-i18n="price.biz.l1">Supplier, invoice and bank-detail checks</li><li data-i18n="price.biz.l2">Investor checks for founders</li><li data-i18n="price.biz.l3">Team accounts and API</li></ul><a class="btn btn-line" href="#start" data-i18n="price.biz.btn">Talk to us</a></div>
+    </div>
+    <p class="pnote" data-i18n="price.note">Planned pricing at launch. Solo Shield $9.99 / month. Recovery Desk case files from $49.</p>
+  </div>
 </section>
-<!-- FOUNDER -->
+
+<!-- FOUNDERS -->
 <section class="s band" id="company" style="padding-top:0">
-<div class="wrap">
-<div class="team-head">
-<span class="eyebrow" data-i18n="s202">The founders</span>
-<blockquote data-i18n="s203">Fraud rings already work across borders, languages and platforms. <em>Protection has to work the same way.</em></blockquote>
-</div>
-<div class="team">
-<article class="member">
-<div aria-label="Portrait of Irakli Ninua" class="portrait p1" data-i18n-aria="s238" role="img"></div>
-<div class="txt">
-<span class="rl" data-i18n="s204">Founder &amp; CEO</span>
-<h3 data-i18n="s205">Irakli Ninua</h3>
-<p data-i18n="s206">Irakli has spent his career where money moves fastest: investment banking, corporate finance, artificial intelligence and crypto. Again and again that work put him <strong>in the middle of real financial fraud</strong>. He worked with law enforcement agencies to trace funds, push for recovery, and prove beyond doubt that a scam was a scam.</p>
-<p data-i18n="s207">He speaks ten languages, has lived in five countries and has travelled to 90. Vallbruna turns that first-hand casework into rules and dossiers that work across every border he has crossed.</p>
-<ul aria-label="Credentials" class="creds" data-i18n-aria="s239">
-<li data-i18n="s208">BSc &amp; MSc Economics</li>
-<li data-i18n="s209">MSc Quantitative Finance</li>
-<li data-i18n="s210">MBA Public Governance &amp; Management</li>
-<li data-i18n="s211">10 languages</li>
-<li data-i18n="s212">Lived in 5 countries</li>
-<li data-i18n="s213">Travelled to 90</li>
-</ul>
-</div>
-</article>
-<article class="member flip">
-<div aria-label="Portrait of Pavel Skrivanek" class="portrait p2" data-i18n-aria="s240" role="img"></div>
-<div class="txt">
-<span class="rl" data-i18n="s214">Co-founder &amp; Chairman</span>
-<h3 data-i18n="s215">Pavel Skrivanek</h3>
-<p data-i18n="s216">In 1994 Pavel started a small translation office in Vyškov. He built it into <strong>Skrivanek, an international language group</strong> with branches in more than 15 countries, working in over 100 languages. An economist trained in Prague, Vienna and Berlin, he has spent three decades doing business across borders.</p>
-<p data-i18n="s217">Along the way he has been the target of fraudsters more than once, and has seen how convincing a professional scam looks from the inside. He brings Vallbruna the experience of scaling a company across Europe, and a deep understanding of the multilingual work that cross-border recovery depends on.</p>
-<ul aria-label="Credentials" class="creds" data-i18n-aria="s239">
-<li data-i18n="s218">Founder, Skrivanek</li>
-<li data-i18n="s219">Since 1994</li>
-<li data-i18n="s220">15+ countries</li>
-<li data-i18n="s221">100+ languages</li>
-</ul>
-</div>
-</article>
-</div>
-</div>
+  <div class="wrap">
+    <div class="team-head">
+      <span class="eyebrow" data-i18n="team.eyebrow">The founders</span>
+      <blockquote data-i18n="team.quote">Fraud rings already work across borders, languages and platforms. <em>Protection has to work the same way.</em></blockquote>
+    </div>
+    <div class="team">
+      <article class="member">
+        <div class="portrait p1" role="img" aria-label="Portrait of Irakli Ninua" data-i18n-aria="aria.p1"></div>
+        <div class="txt">
+          <span class="rl" data-i18n="team.r1">Founder &amp; CEO</span>
+          <h3>Irakli Ninua</h3>
+          <p data-i18n="team.b1a">Irakli has spent his career where money moves fastest: investment banking, corporate finance, artificial intelligence and crypto. Again and again that work put him <strong>in the middle of real financial fraud</strong>. He worked with law enforcement agencies to trace funds, push for recovery, and prove beyond doubt that a scam was a scam.</p>
+          <p data-i18n="team.b1b">He speaks ten languages, has lived in five countries and has travelled to 90. Vallbruna turns that first-hand casework into checks and case files that work across every border he has crossed.</p>
+          <ul class="creds" aria-label="Credentials" data-i18n-aria="aria.creds">
+            <li data-i18n="team.c1">BSc &amp; MSc Economics</li>
+            <li>MSc Quantitative Finance</li>
+            <li>MBA Public Governance &amp; Management</li>
+            <li data-i18n="team.c4">10 languages</li>
+            <li data-i18n="team.c5">Lived in 5 countries</li>
+            <li data-i18n="team.c6">Travelled to 90</li>
+          </ul>
+        </div>
+      </article>
+      <article class="member flip">
+        <div class="portrait p2" role="img" aria-label="Portrait of Pavel Skrivanek" data-i18n-aria="aria.p2"></div>
+        <div class="txt">
+          <span class="rl" data-i18n="team.r2">Co-founder &amp; Chairman</span>
+          <h3>Pavel Skrivanek</h3>
+          <p data-i18n="team.b2a">In 1994 Pavel started a small translation office in Vyškov. He built it into <strong>Skrivanek, an international language group</strong> with branches in more than 15 countries, working in over 100 languages. An economist trained in Prague, Vienna and Berlin, he has spent three decades doing business across borders.</p>
+          <p data-i18n="team.b2b">Along the way he has been the target of fraudsters more than once, and has seen how convincing a professional scam looks from the inside. He brings Vallbruna the experience of scaling a company across Europe, and a deep understanding of the multilingual work that cross-border recovery depends on.</p>
+          <ul class="creds" aria-label="Credentials" data-i18n-aria="aria.creds">
+            <li data-i18n="team.d1">Founder, Skrivanek</li>
+            <li data-i18n="team.d2">Since 1994</li>
+            <li data-i18n="team.d3">15+ countries</li>
+            <li data-i18n="team.d4">100+ languages</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
+
 <!-- CTA -->
 <section class="cta band" id="start">
-<div class="bgp" id="ctaPhoto"></div>
-<div class="wrap">
-<span class="meta" data-i18n="s222" style="font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)">Early access · DACH first</span>
-<h2 data-i18n="s223">Before you click, sign or wire, <em class="s">ask Vallbruna.</em></h2>
-<p data-i18n="s224">Be first to run a check when we open, or bring us a pilot.</p>
-<div class="row">
-<button class="btn btn-primary" data-i18n="s186" id="waitBtn" type="button">Join the waitlist</button>
-<a class="btn btn-ghost" data-i18n="s8" href="#banks">Book a bank pilot</a>
-</div>
-<p class="notice" id="notice" role="status"></p>
-</div>
+  <div class="bgp" id="ctaPhoto"></div>
+  <div class="wrap">
+    <span class="meta ctameta" data-i18n="end.meta">Early access · DACH first</span>
+    <h2 data-i18n="end.h2">Before you pay, click or reply, <em class="s">ask Vallbruna whether it's a scam.</em></h2>
+    <p data-i18n="end.p">Join early access, or bring Vallbruna to your bank's customers.</p>
+    <div class="row">
+      <button class="btn btn-primary" type="button" id="waitBtn" data-i18n="cta.access">Get early access</button>
+      <a class="btn btn-ghost" href="#banks" data-i18n="cta.bank">Partner as a bank</a>
+    </div>
+    <p class="notice" id="notice" role="status"></p>
+  </div>
 </section>
 </main>
+
 <footer class="band">
-<div class="wrap">
-<div class="fcols">
-<div>
-<a class="brand" href="#top"><svg aria-hidden="true" fill="none" height="26" viewbox="0 0 32 32" width="26"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"></circle><path d="M5 22 L12.5 11.5 L16.5 17 L20 12.5 L27 22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path><path d="M12.5 26 L16 22.5 L19.5 26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg>Vallbruna</a>
-<p data-i18n="s225" style="max-width:34ch">The trust and enforcement layer for the post-AI economy.</p>
-</div>
-<div><h4 data-i18n="s1">Platform</h4><ul><li><a data-i18n="s226" href="#engine">Engine</a></li><li><a data-i18n="s227" href="#recovery">Recovery Desk</a></li><li><a data-i18n="s5" href="#pricing">Pricing</a></li></ul></div>
-<div><h4 data-i18n="s228">Solutions</h4><ul><li><a data-i18n="s47" href="#banks">Banks &amp; lenders</a></li><li><a data-i18n="s187" href="#people">Founders &amp; funds</a></li><li><a data-i18n="s229" href="#people">Families</a></li></ul></div>
-<div><h4 data-i18n="s6">Company</h4><ul><li><a data-i18n="s230" href="#company">About</a></li><li><a data-i18n="s231" href="#engine">Security</a></li><li><a data-i18n="s232" href="#start">Contact</a></li></ul></div>
-</div>
-<p class="legal" data-i18n="s233">© 2026 Vallbruna SE, a European public limited company (Societas Europaea). Vallbruna is not a bank, a payment service provider or a law firm. Verdicts are decision support. Recovery Desk dossiers prepare evidence for you, your counsel or your bank to file and do not constitute legal representation. Example checks on this page use fictional data.</p>
-</div>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <a class="brand" href="#top"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true" width="26" height="26"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"/><path d="M5 22 L12.5 11.5 L16.5 17 L20 12.5 L27 22" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M12.5 26 L16 22.5 L19.5 26" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Vallbruna</a>
+        <p style="max-width:34ch" data-i18n="foot.tag">Before you pay, click or reply, ask Vallbruna whether it's a scam.</p>
+      </div>
+      <div><h4 data-i18n="foot.c1">Product</h4><ul><li><a href="#how" data-i18n="nav.how">How it works</a></li><li><a href="#recovery">Recovery Desk</a></li><li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li></ul></div>
+      <div><h4 data-i18n="foot.c2">Solutions</h4><ul><li><a href="#banks" data-i18n="foot.l1">Banks</a></li><li><a href="#people" data-i18n="foot.l2">Families</a></li><li><a href="#people" data-i18n="foot.l3">Businesses</a></li></ul></div>
+      <div><h4 data-i18n="nav.company">Company</h4><ul><li><a href="#company" data-i18n="foot.l4">About</a></li><li><a href="#engine" data-i18n="foot.l5">Security</a></li><li><a href="#start" data-i18n="foot.l6">Contact</a></li></ul></div>
+    </div>
+    <p class="legal" data-i18n="foot.legal">© 2026 Vallbruna SE, a European public limited company (Societas Europaea). Vallbruna is not a bank, a payment service provider or a law firm. Verdicts are guidance to help you decide, not a guarantee. Recovery Desk case files prepare evidence for you, your lawyer or your bank to submit and are not legal representation. Prices shown are planned prices at launch. Example checks on this page use fictional data.</p>
+  </div>
 </footer>
+
 <script src="i18n.js"></script>
 <script>
 (function () {
   var I = window.VB_I18N || { meta: {}, report: {} };
   var base = {
-    doc: { cls: "bad", score: 92, hash: "9f3c2a71e0b84d5f6a19c07e2bd4483e51f0a6c97d2e18b4c3f57a9061d2e8bc", states: ["ok", "bad", "bad", "bad", "ok"] },
-    inv: { cls: "warn", score: 74, hash: "3b71e4c0a2d95f18e6c7034bb1a9f2d06e85c3471f9ad2b0c6e14857a3f90d2e", states: ["ok", "warn", "bad", "warn", "ok"] },
-    vc:  { cls: "bad", score: 96, hash: "c4e0917ab3f25d68e1c0b97a4d2f3e85106bc7d9a2e45f18b3c06d97e2a14f5b", states: ["bad", "bad", "bad", "warn", "ok"] },
-    msg: { cls: "bad", score: 88, hash: "71d2a9e0c5b3f48e16a7c90d2b4e3f15a8c06d97e1b2a45f3c80e9d17a6b2c4f", states: ["bad", "bad", "warn", "ok", "ok"] }
+    mum:  { cls: "bad",  score: 96, states: ["bad", "bad", "bad", "warn"] },
+    call: { cls: "bad",  score: 98, states: ["bad", "bad", "bad", "warn"] },
+    tip:  { cls: "bad",  score: 95, states: ["bad", "bad", "bad", "warn"] },
+    job:  { cls: "bad",  score: 87, states: ["bad", "bad", "warn", "ok"] },
+    vc:   { cls: "bad",  score: 96, states: ["bad", "bad", "bad", "warn"] },
+    inv:  { cls: "warn", score: 72, states: ["warn", "warn", "ok", "ok"] }
   };
   var mark = { ok: "✓", bad: "!", warn: "?" };
   var LANGS = ["en", "de", "cs"];
-  var lang = "en", tab = "doc";
-
-  // remember the English originals once
+  var lang = "en", tab = "mum";
   var en = {};
   document.querySelectorAll("[data-i18n]").forEach(function (el) { en[el.dataset.i18n] = el.innerHTML; });
   document.querySelectorAll("[data-i18n-aria]").forEach(function (el) { en[el.dataset.i18nAria] = el.getAttribute("aria-label"); });
-
   function t(key) { var d = I[lang]; return (lang !== "en" && d && d[key] != null) ? d[key] : en[key]; }
+  function meta() { return I.meta[lang] || I.meta.en || {}; }
 
   function render(k) {
     tab = k;
-    var b = base[k], r = ((I.report[lang] || I.report.en) || {})[k];
-    if (!r) return;
-    var m = I.meta[lang] || I.meta.en || {};
-    document.getElementById("r-file").textContent = r.file;
-    var v = document.getElementById("r-verdict");
-    v.textContent = r.verdict; v.className = "big " + b.cls;
-    document.getElementById("r-score-l").textContent = (m.risk || "Risk") + " " + b.score + " / 100";
+    var b = base[k], r = ((I.report || {})[lang] || (I.report || {}).en || {})[k];
+    if (!b || !r) return;
+    var m = meta();
+    document.getElementById("r-src").textContent = r.src;
+    document.getElementById("r-quote").textContent = r.quote;
+    var v = document.getElementById("r-verdict"); v.textContent = r.verdict; v.className = "big " + b.cls;
+    document.getElementById("r-score-l").textContent = (m.risk || "Scam likelihood") + " " + b.score + (m.pct || "%");
     document.getElementById("r-meter").style.width = b.score + "%";
     document.getElementById("r-act").textContent = r.act;
-    document.getElementById("r-hash").textContent = b.hash;
     document.getElementById("r-foot").textContent = r.foot;
     var ul = document.getElementById("r-checks"); ul.innerHTML = "";
-    r.checks.forEach(function (c, i) {
-      var s = b.states[i], li = document.createElement("li");
-      li.innerHTML = '<span class="ico ' + s + '" aria-hidden="true">' + mark[s] + '</span><div><span class="k">' + c[0] + '</span><span class="v">' + c[1] + '</span></div><span class="pill ' + s + '">' + c[2] + '</span>';
-      ul.appendChild(li);
+    r.reasons.forEach(function (c, i) {
+      var s = b.states[i] || "warn", li = document.createElement("li");
+      var ico = document.createElement("span"); ico.className = "ico " + s; ico.setAttribute("aria-hidden", "true"); ico.textContent = mark[s];
+      var box = document.createElement("div");
+      var kk = document.createElement("span"); kk.className = "k"; kk.textContent = c[0];
+      var vv = document.createElement("span"); vv.className = "v"; vv.textContent = c[1];
+      box.appendChild(kk); box.appendChild(vv); li.appendChild(ico); li.appendChild(box); ul.appendChild(li);
     });
     document.querySelectorAll(".tab").forEach(function (el) { el.setAttribute("aria-selected", el.dataset.k === k ? "true" : "false"); });
   }
@@ -739,7 +800,7 @@ footer .brand { color: var(--night-fg); margin-bottom: 14px; }
     document.documentElement.lang = l;
     document.querySelectorAll("[data-i18n]").forEach(function (el) { el.innerHTML = t(el.dataset.i18n); });
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
-    var m = I.meta[l] || I.meta.en || {};
+    var m = meta();
     if (m.title) document.title = m.title;
     var md = document.querySelector('meta[name="description"]'); if (md && m.desc) md.setAttribute("content", m.desc);
     document.querySelectorAll(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.lang === l ? "true" : "false"); });
@@ -754,20 +815,15 @@ footer .brand { color: var(--night-fg); margin-bottom: 14px; }
   document.querySelectorAll(".lang button").forEach(function (b) { b.addEventListener("click", function () { setLang(b.dataset.lang, true); }); });
   window.addEventListener("hashchange", function () { var h = location.hash.slice(1); if (LANGS.indexOf(h) >= 0) setLang(h, false); });
 
-  // starting language: link (#de / #cs), then the viewer's last choice, then the browser language
   var start = location.hash.slice(1);
   if (LANGS.indexOf(start) < 0) { try { start = localStorage.getItem("vb-lang") || ""; } catch (e) { start = ""; } }
-  if (LANGS.indexOf(start) < 0) { var nl = (navigator.language || "en").slice(0, 2).toLowerCase(); start = nl === "de" ? "de" : nl === "cs" || nl === "sk" ? "cs" : "en"; }
+  if (LANGS.indexOf(start) < 0) { var nl = (navigator.language || "en").slice(0, 2).toLowerCase(); start = nl === "de" ? "de" : (nl === "cs" || nl === "sk") ? "cs" : "en"; }
   setLang(start, false);
 
   var nav = document.querySelector(".nav"), tog = document.getElementById("navtoggle");
   tog.addEventListener("click", function () { var o = nav.classList.toggle("open"); tog.setAttribute("aria-expanded", o ? "true" : "false"); });
   document.querySelectorAll("#navlinks a").forEach(function (a) { a.addEventListener("click", function () { nav.classList.remove("open"); tog.setAttribute("aria-expanded", "false"); }); });
-
-  document.getElementById("waitBtn").addEventListener("click", function () {
-    var m = I.meta[lang] || I.meta.en || {};
-    document.getElementById("notice").textContent = m.notice || "";
-  });
+  document.getElementById("waitBtn").addEventListener("click", function () { document.getElementById("notice").textContent = meta().notice || ""; });
 
   var img = new Image();
   img.onload = function () { document.getElementById("heroPhoto").classList.add("has-img"); };
