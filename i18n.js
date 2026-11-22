@@ -9,8 +9,8 @@ window.VB_I18N = {
   de: {
     "nav.how": "So funktioniert’s", "nav.people": "Wen wir schützen", "nav.banks": "Für Banken", "nav.recovery": "Nach dem Betrug", "nav.pricing": "Preise", "nav.company": "Unternehmen",
     "cta.access": "Zugang sichern", "cta.bank": "Partnerbank werden",
-    "hero.meta": "Vallbruna SE · Europas Betrugscheck",
-    "hero.h1": "Ist das Betrug? <em class=\"s\">Fragen Sie, bevor Sie zahlen.</em>",
+    "hero.meta": "Vallbruna SE · Wir erkennen Betrug",
+    "hero.h1": "Erkennen Sie Betrug, <em class=\"s\">bevor Sie zahlen.</em>",
     "hero.sub": "Ein Anruf, eine Nachricht, eine E-Mail, ein Anlagetipp, ein Jobangebot, ein Vertrag, ein Investor. KI lässt jeden Betrug echt aussehen. Teilen Sie es mit Vallbruna und erhalten Sie in Sekunden eine klare Antwort: was nicht stimmt, wie sicher wir sind und was Sie jetzt tun sollten.",
     "tab.mum": "Nachricht von „Mama“", "tab.call": "Werbeanruf", "tab.tip": "Anlagetipp", "tab.job": "Job im Ausland", "tab.vc": "Investorenangebot", "tab.inv": "E-Mail vom Lieferanten",
     "demo.tag": "Beispiel · fiktiv", "demo.verdict": "Ergebnis", "demo.todo": "Was Sie tun sollten",
@@ -119,8 +119,8 @@ window.VB_I18N = {
   cs: {
     "nav.how": "Jak to funguje", "nav.people": "Koho chráníme", "nav.banks": "Pro banky", "nav.recovery": "Po podvodu", "nav.pricing": "Ceník", "nav.company": "Společnost",
     "cta.access": "Získat předběžný přístup", "cta.bank": "Partnerství pro banky",
-    "hero.meta": "Vallbruna SE · Evropská kontrola podvodů",
-    "hero.h1": "Je to podvod? <em class=\"s\">Zeptejte se, než zaplatíte.</em>",
+    "hero.meta": "Vallbruna SE · Odhalujeme podvody",
+    "hero.h1": "Odhalte podvod <em class=\"s\">dřív, než zaplatíte.</em>",
     "hero.sub": "Hovor, zpráva, e-mail, investiční tip, pracovní nabídka, smlouva, investor. Umělá inteligence dnes dokáže, aby každý podvod vypadal skutečně. Sdílejte to s Vallbrunou a během pár sekund dostanete jasnou odpověď: co nesedí, jak moc si jsme jistí a co dělat dál.",
     "tab.mum": "Zpráva od „mámy“", "tab.call": "Neznámý hovor", "tab.tip": "Investiční tip", "tab.job": "Práce v zahraničí", "tab.vc": "Nabídka investora", "tab.inv": "E-mail od dodavatele",
     "demo.tag": "Ukázka · smyšlené", "demo.verdict": "Verdikt", "demo.todo": "Co dělat",
