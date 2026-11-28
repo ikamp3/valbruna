@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://*.supabase.co wss://*.supabase.co https://api.xposedornot.com; form-action 'self'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Exposure check · Vallbruna</title>
+<meta name="description" content="Free check: has your email leaked in a data breach? See what scammers may know about you and what to do.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap row">
+    <a class="brand" href="../"><span class="mark" aria-hidden="true"></span>Vallbruna</a>
+    <nav><button class="link" type="button" id="signout" hidden>Sign out</button></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="banner" id="demo-banner" hidden>Demo mode: Supabase isn't set up yet, so there's no real sign-in. Any 6-digit code works.</p>
+  <p class="banner" id="config-banner" hidden>The check isn't set up yet. Please come back soon.</p>
+
+  <!-- 1. Enter email -->
+  <section id="step-email">
+    <div class="hero">
+      <p class="eyebrow">Free exposure check</p>
+      <h1>Has your email <em class="s">leaked?</em></h1>
+      <p class="lead">Scammers buy leaked data to write messages that know your name, your bank or the shop you used.
+        Find out what about you is already out there.</p>
+      <form class="check" id="email-form" novalidate>
+        <label for="email" class="sr">Email address</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com">
+        <button class="btn" type="submit">Check it</button>
+      </form>
+      <p class="error" id="email-error" role="alert" hidden></p>
+      <p class="fine">We email you a code to confirm the address is yours. That creates your free Vallbruna account.
+        Nobody can check an address they can't open.</p>
+    </div>
+    <section class="steps">
+      <ol>
+        <li><strong>Enter your email.</strong> Nothing else needed.</li>
+        <li><strong>Type the code we send.</strong> It proves the address is yours.</li>
+        <li><strong>See your result.</strong> Which breaches, what leaked, and what to do now.</li>
+      </ol>
+      <p class="fine">Phone number check: coming soon.</p>
+    </section>
+  </section>
+
+  <!-- 2. Enter code -->
+  <section id="step-code" class="hero narrow" hidden>
+    <p class="eyebrow">One more step</p>
+    <h1>Check your <em class="s">inbox.</em></h1>
+    <p class="lead">We sent a code to <strong id="code-email"></strong>. Type it here to create your free account and see your result.</p>
+    <form class="check" id="code-form" novalidate autocomplete="off">
+      <label for="code" class="sr">Code from the email</label>
+      <input id="code" class="code-input" inputmode="numeric" autocomplete="one-time-code" maxlength="10" required placeholder="123456">
+      <button class="btn" type="submit">Show my result</button>
+    </form>
+    <p class="error" id="code-error" role="alert" hidden></p>
+    <div class="actions fine">
+      <button class="link" type="button" id="resend">Send a new code</button>
+      <button class="link" type="button" id="change-email">Use another email</button>
+    </div>
+    <p class="fine">Nothing there after a few minutes? Look in spam.</p>
+  </section>
+
+  <!-- 3. Loading -->
+  <section id="step-loading" class="hero narrow" hidden>
+    <p class="lead"><span class="spinner" aria-hidden="true"></span>Checking known breaches…</p>
+  </section>
+
+  <!-- 4. Result -->
+  <section id="step-result" hidden>
+    <section class="hero narrow">
+      <p class="eyebrow" id="result-eyebrow"></p>
+      <div class="verdict" id="verdict" role="status">
+        <span class="badge" id="badge"></span>
+        <h1 id="verdict-title"></h1>
+      </div>
+      <p class="lead" id="verdict-lead"></p>
+    </section>
+
+    <section class="card" id="kinds-card" hidden>
+      <h2>What leaked</h2>
+      <ul class="chips" id="kinds"></ul>
+    </section>
+
+    <section class="card" id="tips-card" hidden>
+      <h2>What to do now</h2>
+      <ul class="tips" id="tips"></ul>
+    </section>
+
+    <section class="card" id="list-card" hidden>
+      <h2>The breaches</h2>
+      <table class="list" id="list">
+        <thead><tr><th scope="col">Breach</th><th scope="col">Year</th><th scope="col">What leaked</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <button class="link" type="button" id="show-more" hidden></button>
+    </section>
+
+    <section class="card soft">
+      <h2>Coming to your free account</h2>
+      <ul class="tips">
+        <li><strong>Alerts</strong> when your email shows up in a new breach.</li>
+        <li><strong>Phone number check.</strong></li>
+        <li><strong>Scam check:</strong> share a message, call or offer and get a clear answer before you pay.</li>
+      </ul>
+    </section>
+
+    <section class="danger">
+      <details>
+        <summary>Delete my account</summary>
+        <p class="fine">This removes your account and email address from Vallbruna. It can't be undone.</p>
+        <button class="btn ghost" type="button" id="delete">Yes, delete everything</button>
+        <p class="error" id="delete-error" role="alert" hidden></p>
+      </details>
+    </section>
+  </section>
+
+  <section id="step-deleted" class="hero narrow" hidden>
+    <h1>Account <em class="s">deleted.</em></h1>
+    <p class="lead">Your account and email address are removed from Vallbruna.</p>
+    <p><a class="btn ghost" href="./">Back to the check</a></p>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Breach data from <a href="https://xposedornot.com" rel="noopener">XposedOrNot</a>.</p>
+  <p>© Vallbruna SE</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"
+        integrity="sha384-0w2KAL2YHP6wKOkUDzkCDGgVvfmHnj02DHeQ6XcHOgTfFsGyonKOpShMH1x6nk9o" crossorigin="anonymous"></script>
+<script src="config.js"></script>
+<script src="check.js"></script>
+</body>
+</html>
